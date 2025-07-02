@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COIN TOSS</title>
+
+        <style>
+             body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;  
+                align-items: center;      
+            }
+            .container{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                
+                
+            }
+            .buttons{
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                width: 1000px;
+                height: 200px;
+            }
+            button{
+                width: 80px;
+                height: 80px;
+                border-style: none;
+                border-radius: 80px;
+                background-color: rgb(255, 238, 0);
+                transition: all 0.3s ease;
+            }
+
+            button:hover{
+                width: 100px;
+                height: 100px;
+                
+            }
+            button:active{
+                background-color: rgb(255, 248, 151);
+            }
+            .bg{
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="color: beige;">PICK HEADS OR TAILS</h1>
+            <div class="buttons">
+                <button onclick="
+                    choice = 'heads';
+                    toss();
+                "> HEADS </button>
+                <button onclick="
+                    choice = 'tails';
+                    toss();
+                ">TAILS</button>
+            </div>
+            
+
+        </div>
+        <img class="bg" src="tiger.jpg">
+
+        <script>
+            let choice = '';
+           function toss(){
+            let compchoice = '';
+            random = Math.random();
+            if(random >=0 && random<=0.5)
+           {
+            compchoice = 'heads';
+           }
+           else{
+            compchoice = 'tails';
+           }
+
+           if(choice === compchoice)
+           {
+            alert('YOU WON!');
+            console.log('computer choose '+compchoice);
+           }
+           else
+           {
+            alert('YOU LOST');
+            console.log('computer choose '+compchoice);
+           }
+
+           }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NAME</title>
+    </head>
+    <body>
+        <input placeholder="YOUR NAME" class="name_field" onkeydown="pressedEnter(event);" onkeyup="
+            let live_name = document.querySelector('.name_field').value; 
+            document.querySelector('.text').innerHTML = `Your name is ${live_name}`;
+            ">
+        <button class="submit_btn" onclick="run();" >Submit</button>
+    <p class="text"></p>
+        <script>
+            
+            function run(){
+                let name = document.querySelector('.name_field').value;
+                console.log(name);
+                document.querySelector('.text').innerHTML = `Your name is ${name}`;
+            }
+
+            function pressedEnter(event){
+                if(event.key === 'Enter'){
+                    run();
+                }
+            }
+
+        </script>
+
+    </body>
+</html>

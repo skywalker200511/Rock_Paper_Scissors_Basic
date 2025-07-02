@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+       DOM projects
+    </title>
+    <style>
+      body{
+         font-family: Arial, Helvetica, sans-serif;
+      }
+      .subscribe{
+         border-radius: 20px;
+         background-color: black;
+         color: white;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         padding-left: 15px;
+         padding-right: 15px;
+         border: none;
+         margin-bottom: 30px;
+         font-weight: bold;
+      }
+      .is_subscribed{
+         color: black;
+         background-color: rgb(240,240,240);
+         
+      }
+
+      .cost{
+         font-size: 15px;
+         padding: 10px;
+      }
+      .calc_btn{
+         height: 40px;
+         width: 90px;
+         font-size: 15px;
+         background-color: green;
+         border-style: none;
+         color: white;
+      }
+    </style>
+</head>
+<body>
+   <p>Youtube Subscribe Button</p>
+   <button  onclick="
+   onSubscribe();
+   " class="subscribe">Subscribe</button>
+
+   <p>Amazon Shipping Calculator</p>
+   <input placeholder="Cost of Order"     class="cost"     onkeydown="costOnEnter(event);">
+   <button class="calc_btn" onclick="
+   
+   calcCost();"
+   > Calculate</button>
+   <p class="total_cost"></p>
+
+   <script>
+      function onSubscribe()
+      {
+         const subs_button = document.querySelector('.subscribe');
+         if(subs_button.innerText === 'Subscribe')
+         {
+            subs_button.innerHTML = 'Subscribed';
+            subs_button.classList.add('is_subscribed');
+         }
+         else
+         {
+            subs_button.innerHTML = 'Subscribe';
+            subs_button.classList.remove('is_subscribed');
+         }
+         
+      }
+      let costvar = '';
+      let total = 0;
+      function calcCost(){
+         costvar = Number(document.querySelector('.cost').value);
+         if(costvar >40)
+      {
+         total = costvar+10;
+         console.log(total);
+      }
+      else
+      {
+         total = costvar;
+         console.log(total);
+      }
+      document.querySelector('.total_cost').innerHTML = `Total = ${total}`;
+      }
+      function costOnEnter(event){
+         if(event.key === 'Enter')
+            {
+               calcCost();
+            }
+      }
+   </script>
+</body>
+
+</html>
