@@ -1,0 +1,49 @@
+body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(25, 25, 25);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .btn_div{
+            display: flex;
+        }
+        .top_text{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .move_img{
+            height: 50px;
+        }
+        .move_btn{
+            height: 120px;
+            width: 120px;
+            margin-right: 20px;
+            background-color: transparent;
+            border-color: white;
+            border-radius: 100px;
+            border-width: 3px;
+            cursor: pointer;
+        }
+        .result_score{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .moves{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .reset_btn{
+            padding: 10px 20px;
+            font-size: 15px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        button:hover{
+            scale: 110%;
+        }
+        button:active{
+            background-color: rgb(87, 87, 87);
+        }
+        
